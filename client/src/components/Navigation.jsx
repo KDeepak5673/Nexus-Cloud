@@ -1,4 +1,5 @@
 import React from 'react'
+import AuthButtons from './AuthButtons.jsx'
 
 function Navigation({ currentPage }) {
   return (
@@ -13,10 +14,7 @@ function Navigation({ currentPage }) {
             <li><a href="#">Docs</a></li>
             <li><a href="#">Templates</a></li>
           </ul>
-          <div className="auth-buttons">
-            <a href="#" className="btn btn-outline">Login</a>
-            <a href="#" className="btn btn-primary">Sign Up</a>
-          </div>
+          <AuthButtons />
         </nav>
       </div>
     </header>

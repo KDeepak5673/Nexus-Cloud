@@ -69,7 +69,7 @@ function DashboardPage() {
             <h2>Your Projects</h2>
             <p>All your deployed projects in one place</p>
           </div>
-          <a href="#" className="btn btn-primary">New Project</a>
+          <a href="#" className="btn btn-primary" onClick={() => window.appState.setPage('new-project')}>New Project</a>
         </div>
         
         <div className="projects-grid">

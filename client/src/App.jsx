@@ -4,6 +4,10 @@ import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import DashboardPage from './pages/DashboardPage'
 import AnalyticsPage from './pages/AnalyticsPage'
+import RequireAuth from './components/RequireAuth.jsx'
+import LoginPage from './pages/LoginPage.jsx'
+import SignupPage from './pages/SignupPage.jsx'
+import NewProjectPage from './pages/NewProjectPage.jsx'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -20,9 +24,27 @@ function App() {
   const renderPage = () => {
     switch(currentPage) {
       case 'dashboard':
-        return <DashboardPage />
+        return (
+          <RequireAuth>
+            <DashboardPage />
+          </RequireAuth>
+        )
+      case 'new-project':
+        return (
+          <RequireAuth>
+            <NewProjectPage />
+          </RequireAuth>
+        )
       case 'analytics':
-        return <AnalyticsPage />
+        return (
+          <RequireAuth>
+            <AnalyticsPage />
+          </RequireAuth>
+        )
+      case 'login':
+        return <LoginPage />
+      case 'signup':
+        return <SignupPage />
       default:
         return <HomePage />
     }
